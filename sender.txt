@@ -1,0 +1,18 @@
+//Sender Arduino Board Code (Master)
+char mystring[2] = "71"; 
+int a=13;
+int b=16;
+int c = a+b;
+
+void setup() {                
+ Serial.begin(9600);    
+}
+void loop() {
+ c=a+b;
+ for(int i=1;i>=0;i--){
+   mystring[i]=c%10+48;
+   c=c/10;
+ }
+  Serial.write(mystring,2); 
+ delay(3600);
+}

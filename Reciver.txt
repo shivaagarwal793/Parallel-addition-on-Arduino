@@ -1,0 +1,18 @@
+//Receiver Arduino Board Code
+char mystring[2];               //Initialized variable to store receive
+void setup() {
+ Serial.begin(9600);             // Begin the Serial at 9600 Baud
+}
+int a=20;
+int b=14;
+int c = a+b;
+void loop() {
+ //Serial.println(" RECEIVER");
+ Serial.readBytes(mystring,2);  
+ //Serial.println(mystring);
+ int d = (mystring[0]-48)*10+(mystring[1]-48)*1;
+ int k = c+d;
+ Serial.println(k);
+ //Serial.println(" RECEIVER");
+ delay(3600);    
+}
